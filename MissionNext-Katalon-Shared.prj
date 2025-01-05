@@ -6,11 +6,12 @@
    <UUID>5b46a384-bbbb-469f-b1ce-bb9baf67e4bb</UUID>
    <createdEdition>FREE</createdEdition>
    <createdVersion>9.7.3</createdVersion>
-   <freeLicense>false</freeLicense>
+   <freeLicense>true</freeLicense>
    <migratedVersion>5.9.0</migratedVersion>
    <modifiedEdition>FREE</modifiedEdition>
    <modifiedVersion>9.7.3</modifiedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
+   <projectFileLocation>/Users/cckozie/git/MissionNext-Katalon-Shared/MissionNext-Katalon-Shared.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>
