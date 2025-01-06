@@ -32,6 +32,10 @@ separator = '-------------------------------------------------------------------
 
 pageLinks = []
 
+linkCount = 0
+
+
+
 homePageLinks = [    //Format is HOME PAGE URL | LINKED TO URL
 	"education.missionnext.org|http://missionnext.org/contact-us/",
 	"education.missionnext.org|http://missionnext.org/events",
@@ -75,7 +79,6 @@ homePageLinks = [    //Format is HOME PAGE URL | LINKED TO URL
 	"education.missionnext.org|https://missionnext.org/homepage/supporter/mobilizer/",
 	"education.missionnext.org|https://missionnext.org/homepage/supporter/support-donor/",
 	"education.missionnext.org|https://missionnext.org/homepage/supporter/volunteer/",
-	"education.missionnext.org|https://missionnext.org/homepage/supporters/volunteer/",
 	"education.missionnext.org|https://missionworks.global/",
 	"education.missionnext.org|https://quickstart.missionnext.org/",
 	"education.missionnext.org|https://quickstart.missionnext.org/quickstart-home/login-here/",
@@ -204,6 +207,7 @@ homePageLinks = [    //Format is HOME PAGE URL | LINKED TO URL
 	"quickstart.missionnext.org|https://quickstart.missionnext.org/signup/candidate",
 	"quickstart.missionnext.org|https://quickstart.missionnext.org/site-map/"]
 	
+		
 titleMap = [	//Format is HOME PAGE URL | LINKED TO URL : PAGE TITLE
 	"education.missionnext.org|http://missionnext.org/contact-us/" : "Contact Us - MissionNext.org",
 	"education.missionnext.org|http://missionnext.org/events" : "Events - MissionNext.org",
@@ -212,6 +216,7 @@ titleMap = [	//Format is HOME PAGE URL | LINKED TO URL : PAGE TITLE
 	"education.missionnext.org|http://missionnext.org/terms/legal/" : "Legal Statement - MissionNext.org",
 	"education.missionnext.org|http://missionnext.org/terms/privacy/" : "Privacy Statement - MissionNext.org",
 	"education.missionnext.org|https://education.missionnext.org/" : "Education Home - Education",
+	"education.missionnext.org|https://education.missionnext.org/education-home/im-a-school" : "I'm a School - Education",
 	"education.missionnext.org|https://education.missionnext.org/education-home/im-a-school/" : "I'm a School - Education",
 	"education.missionnext.org|https://education.missionnext.org/education-home/im-an-educator" : "I'm an Educator - Education",
 	"education.missionnext.org|https://education.missionnext.org/education-home/im-an-educator/" : "I'm an Educator - Education",
@@ -501,7 +506,12 @@ pageLinks.each {
 	title = WebUI.getWindowTitle()	//Get the page's title
 	
 	expectedTitle = titleMap.get(it)
-	
+/*	
+	if(expectedTitle == null) {
+		
+		expectedTitle = titleMap.get(it + '/')
+	}
+*/	
 	if(title != expectedTitle || title.length() != expectedTitle.length()) {
 		
 		msg = 'From the home page "' + homePage + '" with link to "' + link + '", the expected page title is "' + expectedTitle + '", but the page title found is "' + title + '".'
@@ -516,9 +526,11 @@ pageLinks.each {
 		msg = 'From the home page "' + homePage + '" the link to "' + link + '" generated a 404 page not found error.'
 		notFound.add(msg)	//Build a list of 404 errors
 	}
+	
+	linkCount ++
 }
 
-outMsg = ''
+outMsg = linkCount + ' links were processed.\n\n'
 
 //Print the messages related to unexpected links
 first = true
@@ -638,6 +650,8 @@ if(notFoundCount == 0) {
 		}
 	}
 }
+
+println(outMsg)
 
 //Display all of the error messages
 JOptionPane.showMessageDialog(new Frame('Test result'), outMsg)
