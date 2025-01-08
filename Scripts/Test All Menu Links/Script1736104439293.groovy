@@ -35,7 +35,6 @@ pageLinks = []
 linkCount = 0
 
 
-
 homePageLinks = [    //Format is HOME PAGE URL | LINKED TO URL
 	"education.missionnext.org|http://missionnext.org/contact-us/",
 	"education.missionnext.org|http://missionnext.org/events",
@@ -82,6 +81,45 @@ homePageLinks = [    //Format is HOME PAGE URL | LINKED TO URL
 	"education.missionnext.org|https://missionworks.global/",
 	"education.missionnext.org|https://quickstart.missionnext.org/",
 	"education.missionnext.org|https://quickstart.missionnext.org/quickstart-home/login-here/",
+	"jg.missionnext.org|https://education.missionnext.org/education-home/im-a-school/",
+	"jg.missionnext.org|https://education.missionnext.org/education-home/im-an-educator/",
+	"jg.missionnext.org|https://explorenext.org/events",
+	"jg.missionnext.org|https://info.missionnext.org/browsers.php",
+	"jg.missionnext.org|https://jg.missionnext.org/",
+	"jg.missionnext.org|https://jg.missionnext.org/journey-guide-home/login-here/",
+	"jg.missionnext.org|https://jg.missionnext.org/managerlogin/?action=logout&redirect_to=https://jg.missionnext.org&_wpnonce=22f8d3125d",
+	"jg.missionnext.org|https://jg.missionnext.org/signup/candidate",
+	"jg.missionnext.org|https://jg.missionnext.org/signup/organization",
+	"jg.missionnext.org|https://jg.missionnext.org/site-map/",
+	"jg.missionnext.org|https://journey.missionnext.org/journey-home/im-an-individual/",
+	"jg.missionnext.org|https://journey.missionnext.org/journey-home/im-an-organization/",
+	"jg.missionnext.org|https://missionnext.org/",
+	"jg.missionnext.org|https://missionnext.org/category/founders-blog-archive/",
+	"jg.missionnext.org|https://missionnext.org/category/impact-report/",
+	"jg.missionnext.org|https://missionnext.org/contact-us/",
+	"jg.missionnext.org|https://missionnext.org/goer/",
+	"jg.missionnext.org|https://missionnext.org/goer/resources-for-goers/",
+	"jg.missionnext.org|https://missionnext.org/homepage/about/",
+	"jg.missionnext.org|https://missionnext.org/homepage/about/missionnext-strategic-partners/",
+	"jg.missionnext.org|https://missionnext.org/homepage/about/mobilization-partners/",
+	"jg.missionnext.org|https://missionnext.org/homepage/about/positions-with-missionnext/",
+	"jg.missionnext.org|https://missionnext.org/homepage/blog-vlog/",
+	"jg.missionnext.org|https://missionnext.org/homepage/donate-here/",
+	"jg.missionnext.org|https://missionnext.org/homepage/events/",
+	"jg.missionnext.org|https://missionnext.org/homepage/goer/positions/",
+	"jg.missionnext.org|https://missionnext.org/homepage/sender/resources-for-senders/",
+	"jg.missionnext.org|https://missionnext.org/homepage/sender/sender-churches/",
+	"jg.missionnext.org|https://missionnext.org/homepage/supporter/",
+	"jg.missionnext.org|https://missionnext.org/homepage/supporter/intercessor/",
+	"jg.missionnext.org|https://missionnext.org/homepage/supporter/mobilizer/",
+	"jg.missionnext.org|https://missionnext.org/homepage/supporter/support-donor/",
+	"jg.missionnext.org|https://missionnext.org/homepage/supporter/volunteer/",
+	"jg.missionnext.org|https://missionnext.org/sender/",
+	"jg.missionnext.org|https://missionnext.org/terms/",
+	"jg.missionnext.org|https://missionnext.org/terms/legal/",
+	"jg.missionnext.org|https://missionnext.org/terms/privacy/",
+	"jg.missionnext.org|https://missionworks.global/",
+	"jg.missionnext.org|https://quickstart.missionnext.org/",
 	"journey.missionnext.org|http://missionnext.org/contact-us/",
 	"journey.missionnext.org|http://missionnext.org/events",
 	"journey.missionnext.org|http://missionnext.org/terms/",
@@ -207,7 +245,8 @@ homePageLinks = [    //Format is HOME PAGE URL | LINKED TO URL
 	"quickstart.missionnext.org|https://quickstart.missionnext.org/signup/candidate",
 	"quickstart.missionnext.org|https://quickstart.missionnext.org/site-map/"]
 	
-		
+
+	
 titleMap = [	//Format is HOME PAGE URL | LINKED TO URL : LINKED PAGE TITLE
 	"education.missionnext.org|http://missionnext.org/contact-us/" : "Contact Us - MissionNext.org",
 	"education.missionnext.org|http://missionnext.org/events" : "Events - MissionNext.org",
@@ -254,6 +293,45 @@ titleMap = [	//Format is HOME PAGE URL | LINKED TO URL : LINKED PAGE TITLE
 	"education.missionnext.org|https://missionworks.global/" : "MissionWorks",
 	"education.missionnext.org|https://quickstart.missionnext.org/" : "QuickStart Home - QuickStart",
 	"education.missionnext.org|https://quickstart.missionnext.org/quickstart-home/login-here/" : "Login here - QuickStart",
+	"jg.missionnext.org|https://education.missionnext.org/education-home/im-a-school/" : "I'm a School - Education",
+	"jg.missionnext.org|https://education.missionnext.org/education-home/im-an-educator/" : "I'm an Educator - Education",
+	"jg.missionnext.org|https://explorenext.org/events" : "Events - Explorenext.org Dev",
+	"jg.missionnext.org|https://info.missionnext.org/browsers.php" : "MissionNext: Information Section",
+	"jg.missionnext.org|https://jg.missionnext.org/" : "Journey Guide Home - Journey Guide Home",
+	"jg.missionnext.org|https://jg.missionnext.org/journey-guide-home/login-here/" : "Login - Journey Guide Home",
+	"jg.missionnext.org|https://jg.missionnext.org/managerlogin/?action=logout&redirect_to=https://jg.missionnext.org&_wpnonce=22f8d3125d" : "You are attempting to log out of Journey Guide Home",
+	"jg.missionnext.org|https://jg.missionnext.org/signup/candidate" : "Journey Guide Home",
+	"jg.missionnext.org|https://jg.missionnext.org/signup/organization" : "Journey Guide Home",
+	"jg.missionnext.org|https://jg.missionnext.org/site-map/" : "Site Map - Journey Guide Home",
+	"jg.missionnext.org|https://journey.missionnext.org/journey-home/im-an-individual/" : "I'm an Individual - Journey",
+	"jg.missionnext.org|https://journey.missionnext.org/journey-home/im-an-organization/" : "I'm an Organization - Journey",
+	"jg.missionnext.org|https://missionnext.org/" : "Serve in Missions - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/category/founders-blog-archive/" : "Founder's Blog Archives - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/category/impact-report/" : "Impact Report Archives - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/contact-us/" : "Contact Us - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/goer/" : "Goer - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/goer/resources-for-goers/" : "Resources for Goers - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/homepage/about/" : "About - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/homepage/about/missionnext-strategic-partners/" : "MissionNext Strategic Partners - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/homepage/about/mobilization-partners/" : "Mobilization Partners - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/homepage/about/positions-with-missionnext/" : "Positions with MissionNext - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/homepage/blog-vlog/" : "blog/vlog - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/homepage/donate-here/" : "Donate - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/homepage/events/" : "Events - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/homepage/goer/positions/" : "Positions - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/homepage/sender/resources-for-senders/" : "Resources for Senders - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/homepage/sender/sender-churches/" : "Churches - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/homepage/supporter/" : "Supporter - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/homepage/supporter/intercessor/" : "Intercessor - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/homepage/supporter/mobilizer/" : "Mobilizer - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/homepage/supporter/support-donor/" : "Donor - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/homepage/supporter/volunteer/" : "Volunteer - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/sender/" : "Sender - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/terms/" : "Terms of Use - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/terms/legal/" : "Legal Statement - MissionNext.org",
+	"jg.missionnext.org|https://missionnext.org/terms/privacy/" : "Privacy Statement - MissionNext.org",
+	"jg.missionnext.org|https://missionworks.global/" : "MissionWorks",
+	"jg.missionnext.org|https://quickstart.missionnext.org/" : "QuickStart Home - QuickStart",
 	"journey.missionnext.org|http://missionnext.org/contact-us/" : "Contact Us - MissionNext.org",
 	"journey.missionnext.org|http://missionnext.org/events" : "Events - MissionNext.org",
 	"journey.missionnext.org|http://missionnext.org/terms/" : "Terms of Use - MissionNext.org",
@@ -379,13 +457,12 @@ titleMap = [	//Format is HOME PAGE URL | LINKED TO URL : LINKED PAGE TITLE
 	"quickstart.missionnext.org|https://quickstart.missionnext.org/signup/candidate" : "QuickStart",
 	"quickstart.missionnext.org|https://quickstart.missionnext.org/site-map/" : "Site Map - QuickStart"]
 	
-	
 WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
 // Home page URL's
-startPages = ['missionnext.org', 'journey.missionnext.org', 'education.missionnext.org', 'quickstart.missionnext.org']
+startPages = ['missionnext.org', 'journey.missionnext.org', 'education.missionnext.org', 'quickstart.missionnext.org', 'jg.missionnext.org']
 
 // Ignore all URL's that contain any of these items
 bypassList = ['plugin', 'wp-content', 'wp-json', 'feed', 'xml', 'jquery', 'wpincludes', 'wp-includes', 'wp_cron', 'twitter', 'facebook', 'linkedin', 'instagram', '#']
