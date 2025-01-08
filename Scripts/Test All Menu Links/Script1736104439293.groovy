@@ -208,7 +208,7 @@ homePageLinks = [    //Format is HOME PAGE URL | LINKED TO URL
 	"quickstart.missionnext.org|https://quickstart.missionnext.org/site-map/"]
 	
 		
-titleMap = [	//Format is HOME PAGE URL | LINKED TO URL : PAGE TITLE
+titleMap = [	//Format is HOME PAGE URL | LINKED TO URL : LINKED PAGE TITLE
 	"education.missionnext.org|http://missionnext.org/contact-us/" : "Contact Us - MissionNext.org",
 	"education.missionnext.org|http://missionnext.org/events" : "Events - MissionNext.org",
 	"education.missionnext.org|http://missionnext.org/homepage/goer/education-partner-schools/" : "Education Partner Schools - MissionNext.org",
@@ -430,12 +430,12 @@ for(page in startPages) { //List of home pages
 		}
 	}
 }
-pageLinks = pageLinks.sort()	//Sort the list
+pageLinks = pageLinks.sort()	//Sort the list of links
 
-myLinks = pageLinks.unique()	//Only key the links when the home page and link is unique
+myLinks = pageLinks.unique()	//Remove any links when both the home page and linked page are duplicated
 
 //Print the home page links found
-if(printIt) {
+if(printIt) {	//For debug
 	println('\n\nPage links:')
 	pageLinks.each {
 		println(it)
@@ -459,8 +459,10 @@ pageLinks.each { 	//Build a list of messages related to any links we were not ex
 	}
 }
 
-unexpectedLinks.each {
-	println(it)
+if(printIt) {	//For debug
+	unexpectedLinks.each {
+		println(it)
+	}
 }
 
 unfoundLinks = []
@@ -480,8 +482,10 @@ homePageLinks.each {	//Build a list of messages related to any links we were exp
 	}
 }
 
-unfoundLinks.each{
-	println(it)
+if(printIt) {	//For debug
+	unfoundLinks.each{
+		println(it)
+	}
 }
 
 wrongPages = []		
@@ -493,26 +497,21 @@ unexpectedCount = 0
 // Navigate to each link and verify that the page title is what is expected and that it does not cause a 404 error
 pageLinks.each {
 	
-	delim = it.indexOf('|')
+	delim = it.indexOf('|')	//Separator of home page and linked page
 	
 	homePage = it.substring(0,delim)
 	
 	link = it.substring(delim + 1)
 	
-	WebUI.navigateToUrl(link)
+	WebUI.navigateToUrl(link)	//Navigate to the linked page
 	
 	WebUI.waitForPageLoad(30)
 	
-	title = WebUI.getWindowTitle()	//Get the page's title
+	title = WebUI.getWindowTitle()	//Get the page's title 
 	
-	expectedTitle = titleMap.get(it)
-/*	
-	if(expectedTitle == null) {
-		
-		expectedTitle = titleMap.get(it + '/')
-	}
-*/	
-	if(title != expectedTitle || title.length() != expectedTitle.length()) {
+	expectedTitle = titleMap.get(it)	//Get the expected title from the title map
+
+	if(title != expectedTitle || title.length() != expectedTitle.length()) {	//Test for unexpected title
 		
 		msg = 'From the home page "' + homePage + '" with link to "' + link + '", the expected page title is "' + expectedTitle + '", but the page title found is "' + title + '".'
 
@@ -521,17 +520,18 @@ pageLinks.each {
 		wrongPages.add(msg)	//Build a list of the wrong pages found
 	}
 	
-	if(!WebUI.verifyTextNotPresent('Oops', false, FailureHandling.OPTIONAL)) {
+	if(!WebUI.verifyTextNotPresent('Oops', false, FailureHandling.OPTIONAL)) {	//Test for page not found error
 		
 		msg = 'From the home page "' + homePage + '" the link to "' + link + '" generated a 404 page not found error.'
 		notFound.add(msg)	//Build a list of 404 errors
 	}
 	
-	linkCount ++
+	linkCount ++	//Count the pages accessed
 }
 
 outMsg = linkCount + ' links were processed.\n\n'
 
+//Build the results message text from the individual error message lists
 //Print the messages related to unexpected links
 first = true
 unexpectedLinkCount = unexpectedLinks.size()
@@ -651,9 +651,9 @@ if(notFoundCount == 0) {
 	}
 }
 
-println(outMsg)
+println(outMsg) //Print all of the error messages to the console
 
-//Display all of the error messages
+//Display all of the error messages in a dialog
 JOptionPane.showMessageDialog(new Frame('Test result'), outMsg)
 
 WebUI.closeBrowser()
