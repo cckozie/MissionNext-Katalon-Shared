@@ -9,4 +9,9 @@
       <initValue>'missionnext.org'</initValue>
       <name>domain</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>folder</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

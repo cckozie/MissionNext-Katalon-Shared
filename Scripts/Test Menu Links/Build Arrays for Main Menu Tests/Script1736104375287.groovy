@@ -29,8 +29,8 @@ import javax.swing.JOptionPane
 // 2. RUN WITH FUNCTION SET TO 'get titles', THEN REPLACE THE titleMap LIST WITH THE LIST PRINTED IN THE CONSOLE, REPLACING THE LAST COMMA WITH A ]
 // 3. REPLACE BOTH LISTS IN THE 'Test All Menu Links' TEST CASE WITH THE UPDATED LISTS FROM THIS TEST CASE
 
-//function = 'get links'
-function = 'get titles'
+function = 'get links'
+//function = 'get titles'
 
 pageLinks = []
 

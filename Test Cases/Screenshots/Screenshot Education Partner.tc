@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Screenshot Education Partner</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>8ac63fde-a8b5-4d58-9984-4e5a7d69aa3a</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>b11b1e19-02c1-43f2-8cfd-a113a5df9b2d</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>e491591f-a625-4f31-947f-d8f98ee0c7c7</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'educationpartner'</defaultValue>
+      <description></description>
+      <id>b11b1e19-02c1-43f2-8cfd-a113a5df9b2d</id>
+      <masked>false</masked>
+      <name>username</name>
+   </variable>
+   <variable>
+      <defaultValue>'gHe6FL13cR6NdLboeW5318EiU5tl+s1pcQlqBBWI0+I='</defaultValue>
+      <description></description>
+      <id>e491591f-a625-4f31-947f-d8f98ee0c7c7</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
+</TestCaseEntity>

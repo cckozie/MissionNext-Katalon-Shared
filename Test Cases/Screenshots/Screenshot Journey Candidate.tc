@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Screenshot Journey Candidate</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>07715725-abc3-407f-93ca-f61e34b6a9cb</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>09ba0cf9-35c9-4d3e-b540-d2b8ed100d1d</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>286e12de-9b7e-428f-8932-7e6c6d7b7449</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'journeygoer'</defaultValue>
+      <description></description>
+      <id>09ba0cf9-35c9-4d3e-b540-d2b8ed100d1d</id>
+      <masked>false</masked>
+      <name>username</name>
+   </variable>
+   <variable>
+      <defaultValue>'/nK6CFRRtKWw0ZraeJTNLl4bTNnkuDBl'</defaultValue>
+      <description></description>
+      <id>286e12de-9b7e-428f-8932-7e6c6d7b7449</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
+</TestCaseEntity>

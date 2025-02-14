@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Screenshot Education Candidate</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>260afeff-c6e4-49a5-b498-e1fdfd3096e9</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>0587f44a-426c-4606-b81b-8f376f92e3bd</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>08bc0d4c-1019-469c-a467-118bad8042cf</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'educationgoer'</defaultValue>
+      <description></description>
+      <id>0587f44a-426c-4606-b81b-8f376f92e3bd</id>
+      <masked>false</masked>
+      <name>username</name>
+   </variable>
+   <variable>
+      <defaultValue>'gHe6FL13cR4M63sn3ZdrY4/KGeFIevaF0VJKdXFkcuo='</defaultValue>
+      <description></description>
+      <id>08bc0d4c-1019-469c-a467-118bad8042cf</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
+</TestCaseEntity>
