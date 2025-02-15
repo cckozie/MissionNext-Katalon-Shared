@@ -16,18 +16,30 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import javax.swing.JFileChooser as JFileChooser
+import com.kms.katalon.core.configuration.RunConfiguration as RunConfiguration
+import java.io.File as File
 
+//Get the last stored path for the output files
+filePath = ''
 
-WebUI.callTestCase(findTestCase('Screenshots/Screenshot Journey Candidate'), [('username') : 'journeygoer', ('password') : '/nK6CFRRtKWw0ZraeJTNLl4bTNnkuDBl'], 
-    FailureHandling.STOP_ON_FAILURE)
+myFile = new File(RunConfiguration.getProjectDir() + '/Data Files/files_path.txt')
 
-WebUI.callTestCase(findTestCase('Screenshots/Screenshot Journey Partner'), [('username') : 'journeysender', ('password') : 'itMzMsgfgQES6zgv0qx7M+dDgGsBTCK3lpXlFXnGUZs='], 
-    FailureHandling.STOP_ON_FAILURE)
+if(myFile.exists()) {
+	filePath = myFile.text
+}
 
-WebUI.callTestCase(findTestCase('Screenshots/Screenshot Education Candidate'), [('username') : 'educationgoer', ('password') : 'gHe6FL13cR4M63sn3ZdrY4/KGeFIevaF0VJKdXFkcuo='], 
-    FailureHandling.STOP_ON_FAILURE)
+if (filePath.length() < 5) {
+	WebUI.callTestCase(findTestCase('Screenshots/Set Output Direcrory'), [:], FailureHandling.STOP_ON_FAILURE)
+	WebUI.delay(5)
+	myFile = new File(RunConfiguration.getProjectDir() + '/Data Files/files_path.txt')
+	while(!myFile.exists()) {
+		WebUI.delay(1)
+	}
+}
 
-WebUI.callTestCase(findTestCase('Screenshots/Screenshot Education Partner'), [('username') : 'educationpartner', ('password') : 'gHe6FL13cR6NdLboeW5318EiU5tl+s1pcQlqBBWI0+I='], 
-    FailureHandling.STOP_ON_FAILURE)
+myNewFile = new File(RunConfiguration.getProjectDir() + '/Data Files/files_path.txt')
+
+filePath = myNewFile.text
+
+return filePath
 

@@ -21,10 +21,7 @@ import java.io.File
 
 page = 'Register'
 
-//Get the last stored path for the output files
-myFile = new File(RunConfiguration.getProjectDir() + '/Data Files/files_path.txt')
-
-filePath = myFile.text
+filePath = WebUI.callTestCase(findTestCase('_functions/Get Output Directory'), [:], FailureHandling.STOP_ON_FAILURE)
 
 baseName = filePath + 'Journey Sender_'
 
@@ -36,7 +33,7 @@ WebUI.navigateToUrl('https://journey.explorenext.org/signup/organization')
 
 WebUI.takeFullPageScreenshot(baseName + page + '.png')
 
-WebUI.callTestCase(findTestCase('Screenshots/Get Tooltip Text'), [('varFileBase') : baseName, ('varPage') : page ], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('_functions/Get Tooltip Text'), [('varFileBase') : baseName, ('varPage') : page ], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.navigateToUrl('https://journey.explorenext.org/journey-home/login-here/')
 
@@ -78,7 +75,7 @@ for (def tab : tabs) {
 	WebUI.takeFullPageScreenshot(baseName + tab + '.png')
 	WebUI.scrollToPosition(0, 0)
 	WebUI.delay(1)
-	WebUI.callTestCase(findTestCase('Screenshots/Get Tooltip Text'), [('varFileBase') : baseName, ('varPage') : tab ], FailureHandling.STOP_ON_FAILURE)
+	WebUI.callTestCase(findTestCase('_functions/Get Tooltip Text'), [('varFileBase') : baseName, ('varPage') : tab ], FailureHandling.STOP_ON_FAILURE)
 	
 }
 

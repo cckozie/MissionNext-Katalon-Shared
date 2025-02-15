@@ -17,15 +17,12 @@ import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import com.kms.katalon.core.configuration.RunConfiguration
-import java.io.File
+import com.kms.katalon.core.configuration.RunConfiguration as RunConfiguration
+import java.io.File as File
 
 page = 'Register'
 
-//Get the last stored path for the output files
-myFile = new File(RunConfiguration.getProjectDir() + '/Data Files/files_path.txt')
-
-filePath = myFile.text
+filePath = WebUI.callTestCase(findTestCase('_functions/Get Output Directory'), [:], FailureHandling.STOP_ON_FAILURE)
 
 baseName = (filePath + 'Education Goer_')
 
@@ -37,7 +34,7 @@ WebUI.navigateToUrl('https://education.missionnext.org/signup/candidate')
 
 WebUI.takeFullPageScreenshot((baseName + page) + '.png')
 
-WebUI.callTestCase(findTestCase('Screenshots/Get Tooltip Text'), [('varFileBase') : baseName, ('varPage') : page], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('_functions/Get Tooltip Text'), [('varFileBase') : baseName, ('varPage') : page], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.navigateToUrl('https://education.missionnext.org/education-home/login-here/')
 
@@ -85,7 +82,7 @@ for (def tab : tabs) {
 
     WebUI.delay(1)
 
-    WebUI.callTestCase(findTestCase('Screenshots/Get Tooltip Text'), [('varFileBase') : baseName, ('varPage') : tab], FailureHandling.STOP_ON_FAILURE)
+    WebUI.callTestCase(findTestCase('_functions/Get Tooltip Text'), [('varFileBase') : baseName, ('varPage') : tab], FailureHandling.STOP_ON_FAILURE)
 }
 
 WebUI.closeBrowser()

@@ -16,34 +16,45 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import javax.swing.JFileChooser
-import javax.swing.JFrame;
+import java.awt.EventQueue;
+import javax.swing.JFileChooser;
+import javax.swing.JDialog;
+import javax.swing.SwingUtilities;
 import com.kms.katalon.core.configuration.RunConfiguration
 import java.io.File
-//import java.io.*
 
-//Get the last stored path for the output files
 myFile = new File(RunConfiguration.getProjectDir() + '/Data Files/files_path.txt')
-
-filePath = myFile.text
-
-myPath = ''
-
-//Prompt for new path
-JFrame frame = new JFrame();
-frame.setAlwaysOnTop(true);
-frame.setSize(600, 400);
-println(filePath)
-JFileChooser fileSelect = new JFileChooser((filePath));
-fileSelect.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-fileSelect.setAcceptAllFileFilterUsed(false);
-int returnVal = fileSelect.showOpenDialog(frame);
-if (returnVal == JFileChooser.APPROVE_OPTION) {
-	File file = fileSelect.getSelectedFile()
-	myPath = file.getAbsolutePath() + '/'
+if(myFile.exists()) {
+	println('exists')
+} else {
+	myFile.write('')
 }
-frame.dispose();
+Runnable r = new Runnable() {
 
-if(myPath != '' && myPath != filePath) {
-	myFile.write(myPath)
+	@Override
+	public void run() {
+		
+		//Get the last stored path for the output files
+		myFile = new File(RunConfiguration.getProjectDir() + '/Data Files/files_path.txt')
+		filePath = myFile.text
+		myPath = ''
+		//Delete the file containing the path so that the calling program will wait for return
+		myFile.delete()
+		//Launch file chooser
+		JFileChooser jfc = new JFileChooser(filePath);
+		jfc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+		if( jfc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION ){
+			File file = jfc.getSelectedFile();
+			myPath = file.getAbsolutePath() + '/'
+			//Write new path to data file
+			if(myPath != '' && myPath != filePath) {
+				myFile.write(myPath)
+			}
+		} else {
+			//Write old path to data file
+			println('cancel')
+			myFile.write(filePath)
+		}
+	}
 }
+SwingUtilities.invokeLater(r);
