@@ -16,14 +16,14 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import com.kms.katalon.core.configuration.RunConfiguration
-import java.io.File
+import com.kms.katalon.core.configuration.RunConfiguration as RunConfiguration
+import java.io.File as File
 
 page = 'Register'
 
 filePath = WebUI.callTestCase(findTestCase('_functions/Get Output Directory'), [:], FailureHandling.STOP_ON_FAILURE)
 
-baseName = filePath + 'Journey Goer_'
+baseName = (filePath + 'Journey Goer_')
 
 WebUI.openBrowser('')
 
@@ -31,9 +31,7 @@ WebUI.maximizeWindow()
 
 WebUI.navigateToUrl('https://journey.missionnext.org/signup/candidate')
 
-WebUI.takeFullPageScreenshot(baseName +  page + '.png')
-
-WebUI.callTestCase(findTestCase('_functions/Get Tooltip Text'), [('varFileBase') : baseName, ('varPage') : page ], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : page], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.navigateToUrl('https://journey.missionnext.org/login-here/')
 
@@ -43,31 +41,52 @@ WebUI.setEncryptedText(findTestObject('Screenshots/Journey Goer/input_Password')
 
 WebUI.click(findTestObject('Screenshots/Journey Goer/button_Log In'))
 
-tabs = ['Contact Info', 'Experience', 'Situation', 'Availability', 'ServiceComment', 'Your Ministry Prefs', 'IT Skills and Interest']
+tabs = ['Contact Info', 'Experience', 'Situation', 'Availability', 'ServiceComment', 'Your Ministry Prefs', 'IT Skills and Interest'
+    , 'Spouse Info', 'Spouse Experience', 'Spouse Ministry Prefs']
 
 for (def tab : tabs) {
+    WebUI.click(findTestObject('Screenshots/Journey Goer/a_' + tab))
 
-	WebUI.click(findTestObject('Screenshots/Journey Goer/a_' + tab))
+    if (tab == 'Contact Info') {
+        WebUI.scrollToElement(findTestObject('Object Repository/Screenshots/Journey Goer/select_Marital Status'), 2)
+
+        WebUI.delay(1)
+
+        WebUI.selectOptionByValue(findTestObject('Object Repository/Screenshots/Journey Goer/select_Marital Status'), 'Married', 
+            false)
+    }
+    
+    if (tab == 'Spouse Info') {
+        WebUI.scrollToElement(findTestObject('Object Repository/Screenshots/Journey Goer/input_Spouse Serving with You Yes'), 
+            2)
+
+        WebUI.delay(1)
+
+        WebUI.click(findTestObject('Object Repository/Screenshots/Journey Goer/input_Spouse Serving with You Yes'))
+    }
+    
+    if (tab == 'Experience') {
+        WebUI.scrollToElement(findTestObject('Object Repository/Screenshots/Journey Goer/input_IT Professional'), 2)
+
+        WebUI.delay(1)
+
+        WebUI.click(findTestObject('Object Repository/Screenshots/Journey Goer/input_IT Professional'))
+    } else if (tab == 'Availability') {
+        WebUI.scrollToElement(findTestObject('Object Repository/Screenshots/Journey Goer/input_Interested in Short-Term'), 
+            2)
+
+        WebUI.delay(1)
+
+        WebUI.click(findTestObject('Object Repository/Screenshots/Journey Goer/input_Interested in Short-Term'))
+    }
+    
+	WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : tab], FailureHandling.STOP_ON_FAILURE)
 	
-	if(tab == 'Experience') {
-		
-				WebUI.scrollToElement(findTestObject('Object Repository/Screenshots/Journey Goer/input_IT Professional'),2)
-				WebUI.delay(1)
-				WebUI.click(findTestObject('Object Repository/Screenshots/Journey Goer/input_IT Professional'))
-				
-				
-	} else	if(tab == 'Availability') {
-		
-				WebUI.scrollToElement(findTestObject('Object Repository/Screenshots/Journey Goer/input_Interested in Short-Term'),2)
-				WebUI.delay(1)
-				WebUI.click(findTestObject('Object Repository/Screenshots/Journey Goer/input_Interested in Short-Term'))
-	}
-	
-	WebUI.takeFullPageScreenshot(baseName + tab + '.png')
 	WebUI.scrollToPosition(0, 0)
-	WebUI.delay(1)
-	WebUI.callTestCase(findTestCase('_functions/Get Tooltip Text'), [('varFileBase') : baseName, ('varPage') : tab ], FailureHandling.STOP_ON_FAILURE)
 	
+	WebUI.delay(1)
+
 }
 
 WebUI.closeBrowser()
+

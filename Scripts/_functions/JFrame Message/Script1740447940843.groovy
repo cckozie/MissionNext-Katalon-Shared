@@ -16,31 +16,13 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import com.kms.katalon.core.configuration.RunConfiguration as RunConfiguration
-import java.io.File as File
+import javax.swing.*;
 
-//Get the last stored path for the output files
-filePath = ''
-
-myFile = new File(RunConfiguration.getProjectDir() + '/Data Files/files_path.txt')
-
-if(myFile.exists()) {
-	filePath = myFile.text
-}
-
-while(filePath.length() < 5) {
-	filePath = WebUI.callTestCase(findTestCase('Screenshots/Set Output Direcrory'), [:], FailureHandling.STOP_ON_FAILURE)
-	WebUI.delay(2)
-	myFile = new File(RunConfiguration.getProjectDir() + '/Data Files/files_path.txt')
-	while(!myFile.exists()) {
-		WebUI.delay(1)
-	}
-	filePath = myFile.text
-}
-
-myNewFile = new File(RunConfiguration.getProjectDir() + '/Data Files/files_path.txt')
-
-filePath = myNewFile.text
-
-return filePath
-
+frame = new JFrame("");
+JPanel p = new JPanel();
+JLabel l = new JLabel('Getting screenshot and tooltip text...', SwingConstants.CENTER);
+frame.add(l);
+frame.setSize(300, 100);
+frame.setLocation(600, 0);
+frame.setAlwaysOnTop (true)
+frame.show();

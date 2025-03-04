@@ -19,15 +19,15 @@ import org.openqa.selenium.Keys as Keys
 import javax.swing.JFileChooser as JFileChooser
 
 
-WebUI.callTestCase(findTestCase('Screenshots/Screenshot Journey Candidate'), [('username') : 'journeygoer', ('password') : '/nK6CFRRtKWw0ZraeJTNLl4bTNnkuDBl'], 
-    FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Screenshots/Screenshot Journey Candidate'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(findTestCase('Screenshots/Screenshot Journey Partner'), [('username') : 'journeysender', ('password') : 'itMzMsgfgQES6zgv0qx7M+dDgGsBTCK3lpXlFXnGUZs='], 
-    FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Screenshots/Screenshot Journey Partner'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(findTestCase('Screenshots/Screenshot Education Candidate'), [('username') : 'educationgoer', ('password') : 'gHe6FL13cR4M63sn3ZdrY4/KGeFIevaF0VJKdXFkcuo='], 
-    FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Screenshots/Screenshot Journey Guide'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(findTestCase('Screenshots/Screenshot Education Partner'), [('username') : 'educationpartner', ('password') : 'gHe6FL13cR6NdLboeW5318EiU5tl+s1pcQlqBBWI0+I='], 
-    FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Screenshots/Screenshot Quickstart'), [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('Screenshots/Screenshot Education Candidate'), [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('Screenshots/Screenshot Education Partner'), [:], FailureHandling.STOP_ON_FAILURE)
 

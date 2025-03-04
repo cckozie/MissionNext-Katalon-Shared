@@ -32,9 +32,7 @@ WebUI.maximizeWindow()
 
 WebUI.navigateToUrl('https://education.missionnext.org/signup/organization')
 
-WebUI.takeFullPageScreenshot(baseName + page + '.png')
-
-WebUI.callTestCase(findTestCase('_functions/Get Tooltip Text'), [('varFileBase') : baseName, ('varPage') : page ], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : page], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.navigateToUrl('https://education.missionnext.org/education-home/login-here/')
 
@@ -62,11 +60,11 @@ for (def tab : tabs) {
 		WebUI.click(findTestObject('Object Repository/Screenshots/Education Sender/input_Hide Listing'))
 	}
 		
-	WebUI.takeFullPageScreenshot(baseName + tab + '.png')
-	WebUI.scrollToPosition(0, 0)
-	WebUI.delay(1)
-	WebUI.callTestCase(findTestCase('_functions/Get Tooltip Text'), [('varFileBase') : baseName, ('varPage') : tab ], FailureHandling.STOP_ON_FAILURE)
+	WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : tab], FailureHandling.STOP_ON_FAILURE)
 	
+	WebUI.scrollToPosition(0, 0)
+	
+	WebUI.delay(1)
 }
 
 WebUI.closeBrowser()

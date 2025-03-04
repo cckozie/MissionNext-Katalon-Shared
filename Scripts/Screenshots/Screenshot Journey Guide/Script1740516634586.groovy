@@ -23,13 +23,13 @@ page = 'Register'
 
 filePath = WebUI.callTestCase(findTestCase('_functions/Get Output Directory'), [:], FailureHandling.STOP_ON_FAILURE)
 
-baseName = filePath + 'Journey Sender_'
+baseName = filePath + 'Journey Guide_'
 
 WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-WebUI.navigateToUrl('https://journey.explorenext.org/signup/organization')
+WebUI.navigateToUrl('https://jg.missionnext.org/signup/organization')
 
 WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : page], FailureHandling.STOP_ON_FAILURE)
 

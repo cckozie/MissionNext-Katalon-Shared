@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Screenshot Education Partner</name>
+   <name>Screenshot Journey Guide</name>
    <tag></tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
-   <testCaseGuid>8ac63fde-a8b5-4d58-9984-4e5a7d69aa3a</testCaseGuid>
+   <testCaseGuid>1bfa6a7e-a6a2-4cf6-872e-66727cdf1150</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>b11b1e19-02c1-43f2-8cfd-a113a5df9b2d</variableId>
+      <variableId>6e5f708e-8f42-435d-8043-bc48f67bc925</variableId>
    </variableLinks>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>e491591f-a625-4f31-947f-d8f98ee0c7c7</variableId>
+      <variableId>7b3a2dc2-a170-4d1e-a83c-af8b40d91f45</variableId>
    </variableLinks>
    <variable>
-      <defaultValue>'educationsender'</defaultValue>
+      <defaultValue>'journeyguide'</defaultValue>
       <description></description>
-      <id>b11b1e19-02c1-43f2-8cfd-a113a5df9b2d</id>
+      <id>6e5f708e-8f42-435d-8043-bc48f67bc925</id>
       <masked>false</masked>
       <name>username</name>
    </variable>
    <variable>
-      <defaultValue>'gHe6FL13cR4Eu9cAy3COouaCZJMx0gDvJd0ocWWZIgQ='</defaultValue>
+      <defaultValue>'/nK6CFRRtKWojrPFOmCcbrZ0PiBcf6EP'</defaultValue>
       <description></description>
-      <id>e491591f-a625-4f31-947f-d8f98ee0c7c7</id>
+      <id>7b3a2dc2-a170-4d1e-a83c-af8b40d91f45</id>
       <masked>false</masked>
       <name>password</name>
    </variable>

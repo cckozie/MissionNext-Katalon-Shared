@@ -19,28 +19,40 @@ import org.openqa.selenium.Keys as Keys
 import com.kms.katalon.core.configuration.RunConfiguration as RunConfiguration
 import java.io.File as File
 
-//Get the last stored path for the output files
-filePath = ''
+page = 'Register'
 
-myFile = new File(RunConfiguration.getProjectDir() + '/Data Files/files_path.txt')
+filePath = WebUI.callTestCase(findTestCase('_functions/Get Output Directory'), [:], FailureHandling.STOP_ON_FAILURE)
 
-if(myFile.exists()) {
-	filePath = myFile.text
+baseName = (filePath + 'Quickstart_')
+
+WebUI.openBrowser('')
+
+WebUI.maximizeWindow()
+
+WebUI.navigateToUrl('https://quickstart.missionnext.org/signup/candidate')
+
+WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : page], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.navigateToUrl('https://quickstart.missionnext.org/quickstart-home/login-here/')
+
+WebUI.setText(findTestObject('Screenshots/Quickstart Goer/input_Username'), username)
+
+WebUI.setEncryptedText(findTestObject('Screenshots/Quickstart Goer/input_Password'), password)
+
+WebUI.click(findTestObject('Screenshots/Quickstart Goer/button_Log In'))
+
+tabs = ['Name Preferences', 'Contact Info', 'Ministry Positions']
+
+for (def tab : tabs) {
+    WebUI.click(findTestObject('Screenshots/Quickstart Goer/a_' + tab))
+
+	WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : tab], FailureHandling.STOP_ON_FAILURE)
+	
+	WebUI.scrollToPosition(0, 0)
+	
+	WebUI.delay(1)
+
 }
 
-while(filePath.length() < 5) {
-	filePath = WebUI.callTestCase(findTestCase('Screenshots/Set Output Direcrory'), [:], FailureHandling.STOP_ON_FAILURE)
-	WebUI.delay(2)
-	myFile = new File(RunConfiguration.getProjectDir() + '/Data Files/files_path.txt')
-	while(!myFile.exists()) {
-		WebUI.delay(1)
-	}
-	filePath = myFile.text
-}
-
-myNewFile = new File(RunConfiguration.getProjectDir() + '/Data Files/files_path.txt')
-
-filePath = myNewFile.text
-
-return filePath
+WebUI.closeBrowser()
 

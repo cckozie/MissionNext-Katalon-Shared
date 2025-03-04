@@ -24,11 +24,14 @@ import com.kms.katalon.core.configuration.RunConfiguration
 import java.io.File
 
 myFile = new File(RunConfiguration.getProjectDir() + '/Data Files/files_path.txt')
+
 if(myFile.exists()) {
 	println('exists')
 } else {
 	myFile.write('')
 }
+filePath = ''
+
 Runnable r = new Runnable() {
 
 	@Override
@@ -38,8 +41,11 @@ Runnable r = new Runnable() {
 		myFile = new File(RunConfiguration.getProjectDir() + '/Data Files/files_path.txt')
 		filePath = myFile.text
 		myPath = ''
+		
 		//Delete the file containing the path so that the calling program will wait for return
 		myFile.delete()
+		
+		first = false
 		//Launch file chooser
 		JFileChooser jfc = new JFileChooser(filePath);
 		jfc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
@@ -48,7 +54,8 @@ Runnable r = new Runnable() {
 			myPath = file.getAbsolutePath() + '/'
 			//Write new path to data file
 			if(myPath != '' && myPath != filePath) {
-				myFile.write(myPath)
+				filePath = myPath
+				myFile.write(filePath)
 			}
 		} else {
 			//Write old path to data file
