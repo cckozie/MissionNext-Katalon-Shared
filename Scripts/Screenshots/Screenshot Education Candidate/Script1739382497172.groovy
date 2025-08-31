@@ -36,16 +36,22 @@ WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [
 	
 WebUI.navigateToUrl('https://education.missionnext.org/education-home/login-here/')
 
-WebUI.setText(findTestObject('Screenshots/Education Goer/input_Username'), username)
+WebUI.setText(findTestObject('Screenshots/Education Goer/input_Username'), 'cktest14ec')
 
-WebUI.setEncryptedText(findTestObject('Screenshots/Education Goer/input_Password'), password)
+WebUI.setEncryptedText(findTestObject('Screenshots/Education Goer/input_Password'), 'rvR032z4JCjllCvYTU6dhw==')
 
 WebUI.click(findTestObject('Screenshots/Education Goer/button_Log In'))
 
 tabs = ['Contact Info', 'Experience', 'Education', 'Situation', 'Availability', 'Preferences', 'OptionsComment', 'Spouse Info'
     , 'Spouse Experience', 'Spouse Service Prefs', 'Spouse Education', 'Spouse Teaching Prefs']
 
+WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : 'Dashboard'], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.click(findTestObject('Object Repository/Screenshots/Education Goer/a_My Profile'))
+
 for (def tab : tabs) {
+	println('Processing ' + tab)
+	
     WebUI.click(findTestObject('Screenshots/Education Goer/a_' + tab))
 
     if (tab == 'Contact Info') {

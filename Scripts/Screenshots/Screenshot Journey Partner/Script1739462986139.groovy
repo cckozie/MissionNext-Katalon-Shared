@@ -35,9 +35,9 @@ WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [
 
 WebUI.navigateToUrl('https://journey.explorenext.org/journey-home/login-here/')
 
-WebUI.setText(findTestObject('Screenshots/Journey Sender/input_Username'), 'cktest02jp')
+WebUI.setText(findTestObject('Screenshots/Journey Sender/input_Username'), 'cktest17jp')
 
-WebUI.setEncryptedText(findTestObject('Screenshots/Journey Sender/input_Password'), 'J+U8o5fvtGfb5LDZyGLqyg==')
+WebUI.setEncryptedText(findTestObject('Screenshots/Journey Sender/input_Password'), '8DY9ST8qsuU3b2Raq+e+VQ==')
 
 WebUI.click(findTestObject('Screenshots/Journey Sender/button_Log In'))
 

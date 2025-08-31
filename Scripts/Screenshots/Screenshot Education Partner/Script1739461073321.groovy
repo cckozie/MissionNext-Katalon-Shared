@@ -36,15 +36,18 @@ WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [
 
 WebUI.navigateToUrl('https://education.missionnext.org/education-home/login-here/')
 
-WebUI.setText(findTestObject('Screenshots/Education Goer/input_Username'), 'cktest03ep')
+WebUI.setText(findTestObject('Screenshots/Education Goer/input_Username'), 'cktest16ep')
 
-WebUI.setEncryptedText(findTestObject('Screenshots/Education Goer/input_Password'), 'gcXGyZ7tChbih9PubKIekw==')
+WebUI.setEncryptedText(findTestObject('Screenshots/Education Goer/input_Password'), '+U8cizQtaJJPakb6Fbbuqw==')
 
 WebUI.click(findTestObject('Screenshots/Education Goer/button_Log In'))
 
+WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : 'Dashboard'], FailureHandling.STOP_ON_FAILURE)
+
 WebUI.click(findTestObject('Object Repository/Screenshots/Education Sender/a_My Profile'))
 
-tabs = ['Contact Info', 'School Info', 'Positions Needed', 'Service Options', 'Readiness', 'Match Filters', 'Admin Info']
+tabs = ['Contact Info', 'School Info', 'Positions Needed', 'Service Options', 'Readiness', 'Match Filters', 
+	'Recruiting Countries', 'Admin Info']
 
 for (def tab : tabs) {
 

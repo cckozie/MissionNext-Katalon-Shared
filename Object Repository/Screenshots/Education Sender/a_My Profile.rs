@@ -6,12 +6,12 @@
    <elementGuidId>77839e86-5934-4648-a875-9104bb95120c</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@id='main']/div/div/div/div/div/div[2]/a[2]</value>
-      </entry>
-      <entry>
          <key>CSS</key>
          <value>a:nth-of-type(2)</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='main']/div/div/div/div/div/div[2]/a[2]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -23,7 +23,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>a</value>
-      <webElementGuid>b4b79d29-b8b9-4113-a0db-f6e808fc6913</webElementGuid>
+      <webElementGuid>5ce1e451-db8a-4c9e-9191-b5f2bf6f931a</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -31,7 +31,7 @@
       <name>href</name>
       <type>Main</type>
       <value>/profile</value>
-      <webElementGuid>3a759ae4-0ecf-4988-a738-c956946ef5a7</webElementGuid>
+      <webElementGuid>acb571ee-0e79-4a65-8d4a-94710328862c</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -39,7 +39,7 @@
       <name>text</name>
       <type>Main</type>
       <value>My Profile</value>
-      <webElementGuid>f46c8802-b9b2-45e3-b9ed-013c51660564</webElementGuid>
+      <webElementGuid>5c200371-f291-4e18-b55a-7720468728e0</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -47,7 +47,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;main&quot;)/div[@class=&quot;container clearfix&quot;]/div[@class=&quot;row&quot;]/div[@class=&quot;page-content&quot;]/div[@class=&quot;sidebar-container&quot;]/div[@class=&quot;sidebar&quot;]/div[@class=&quot;links mn-sidebar-links&quot;]/a[2]</value>
-      <webElementGuid>b420a0fe-9a29-4315-afe4-c88e8fd79edb</webElementGuid>
+      <webElementGuid>ff05c70c-cd1a-4854-bdc8-589e64a54326</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -55,7 +55,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='main']/div/div/div/div/div/div[2]/a[2]</value>
-      <webElementGuid>77f40401-46e2-4a0b-9f19-dba0e7509abc</webElementGuid>
+      <webElementGuid>86b192cd-07bb-43a2-9732-1aec5f34b57d</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -63,7 +63,7 @@
       <name>xpath:link</name>
       <type>Main</type>
       <value>//a[contains(text(),'My Profile')]</value>
-      <webElementGuid>1011ee60-f00e-4da4-bca5-969e8001f287</webElementGuid>
+      <webElementGuid>8d1cd3d5-63f4-4799-996f-ec1df060405e</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -71,7 +71,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='My Dashboard'])[1]/following::a[1]</value>
-      <webElementGuid>61d65daf-f1ab-4f63-95e3-66c4eebbfa0e</webElementGuid>
+      <webElementGuid>4676d3e2-3920-4142-8add-299d6adf1dba</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -79,7 +79,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Upload'])[1]/following::a[2]</value>
-      <webElementGuid>2d4e212f-fe4f-4a48-8e52-d2c589b7d1e7</webElementGuid>
+      <webElementGuid>d14e57c5-b8a0-44a5-8c4d-a97c65a81cb7</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -87,7 +87,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Change Password'])[1]/preceding::a[1]</value>
-      <webElementGuid>c93a77e1-bdfa-4ffd-914f-b3f5f9ed078a</webElementGuid>
+      <webElementGuid>20b59e2d-abe1-45c2-b6c7-c12d3a32335d</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -95,7 +95,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='My Presentation'])[1]/preceding::a[2]</value>
-      <webElementGuid>01d29f50-a298-4ed7-b065-1e0a93994330</webElementGuid>
+      <webElementGuid>efe3f19c-aeb7-4f05-9b8b-867e7374a4d5</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -103,7 +103,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>//*/text()[normalize-space(.)='My Profile']/parent::*</value>
-      <webElementGuid>8f6c5205-f35f-4b93-94ce-33b11be8c5b8</webElementGuid>
+      <webElementGuid>b67fe795-a0c1-4f4c-bb17-3ccf0644c20c</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -111,7 +111,7 @@
       <name>xpath:href</name>
       <type>Main</type>
       <value>//a[contains(@href, '/profile')]</value>
-      <webElementGuid>9dedacc0-7a4d-4c47-bccd-9b551f3ea506</webElementGuid>
+      <webElementGuid>22fd3c98-782f-4b56-9c27-af9d0f53c6d9</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -119,7 +119,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//a[2]</value>
-      <webElementGuid>05e4251c-4626-44d3-afce-fa89ba1d383a</webElementGuid>
+      <webElementGuid>7fdc189f-ea28-4fad-a58f-d1e817b1f2d5</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -127,6 +127,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//a[@href = '/profile' and (text() = 'My Profile' or . = 'My Profile')]</value>
-      <webElementGuid>91fd5c9f-2b04-45fe-ba16-f5940327003f</webElementGuid>
+      <webElementGuid>fd230ad1-bbf7-466f-8e51-7d3128ef80ca</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

@@ -35,14 +35,18 @@ WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [
 
 WebUI.navigateToUrl('https://journey.missionnext.org/login-here/')
 
-WebUI.setText(findTestObject('Screenshots/Journey Goer/input_Username'), username)
+WebUI.setText(findTestObject('Screenshots/Journey Goer/input_Username'), 'cktest15jc')
 
-WebUI.setEncryptedText(findTestObject('Screenshots/Journey Goer/input_Password'), password)
+WebUI.setEncryptedText(findTestObject('Screenshots/Journey Goer/input_Password'), 'gnYzEwUXvDp+5uGLsmRWLQ==')
 
 WebUI.click(findTestObject('Screenshots/Journey Goer/button_Log In'))
 
 tabs = ['Contact Info', 'Experience', 'Situation', 'Availability', 'ServiceComment', 'Your Ministry Prefs', 'IT Skills and Interest'
     , 'Spouse Info', 'Spouse Experience', 'Spouse Ministry Prefs']
+
+WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : 'Dashboard'], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.click(findTestObject('Object Repository/Screenshots/Journey Goer/a_My Profile'))
 
 for (def tab : tabs) {
     WebUI.click(findTestObject('Screenshots/Journey Goer/a_' + tab))
@@ -70,7 +74,12 @@ for (def tab : tabs) {
 
         WebUI.delay(1)
 
-        WebUI.click(findTestObject('Object Repository/Screenshots/Journey Goer/input_IT Professional'))
+		checked = WebUI.verifyElementChecked(findTestObject('Object Repository/Screenshots/Journey Goer/input_IT Professional'), 1, FailureHandling.OPTIONAL)
+		
+		if(!checked) {
+			WebUI.click(findTestObject('Object Repository/Screenshots/Journey Goer/input_IT Professional'))
+		}
+		
     } else if (tab == 'Availability') {
         WebUI.scrollToElement(findTestObject('Object Repository/Screenshots/Journey Goer/input_Interested in Short-Term'), 
             2)
