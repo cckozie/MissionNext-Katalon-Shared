@@ -41,6 +41,8 @@ WebUI.setEncryptedText(findTestObject('Screenshots/Journey Goer/input_Password')
 
 WebUI.click(findTestObject('Screenshots/Journey Goer/button_Log In'))
 
+WebUI.waitForPageLoad(10)
+
 tabs = ['Contact Info', 'Experience', 'Situation', 'Availability', 'ServiceComment', 'Your Ministry Prefs', 'IT Skills and Interest'
     , 'Spouse Info', 'Spouse Experience', 'Spouse Ministry Prefs']
 

@@ -35,7 +35,7 @@ fileBase = varFileBase
 
 page = varPage
 
-WebUI.takeFullPageScreenshot((fileBase + page) + '.png')
+WebUI.takeFullPageScreenshot((fileBase + page) + '_Screenshot.png')
 
 fieldTooltips = [:]
 

@@ -19,14 +19,14 @@
       <variableId>e23e8925-1c34-488b-b79f-0af2153a7114</variableId>
    </variableLinks>
    <variable>
-      <defaultValue>'quickstartgoer'</defaultValue>
+      <defaultValue>'cktest12qs'</defaultValue>
       <description></description>
       <id>728d8c65-c719-44e7-ba66-4dba0023459d</id>
       <masked>false</masked>
       <name>username</name>
    </variable>
    <variable>
-      <defaultValue>'Ip4Unai0oywfMDkX0NvNwdW1PUXepMYYKJBk5DfHvy4='</defaultValue>
+      <defaultValue>'dxbXg/7Bvrt4H77HrVjHEQ=='</defaultValue>
       <description></description>
       <id>e23e8925-1c34-488b-b79f-0af2153a7114</id>
       <masked>false</masked>

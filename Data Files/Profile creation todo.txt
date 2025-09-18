@@ -1,0 +1,21 @@
+For all profiles:
+xx Ensure Google Analytics Opt Out is running
+- Test login when finished
+- Close browser when finished
+- Change logins to begin on home page
+- Add failure function in:
+	xx Test tooltips
+	xx Test field error messages
+	xx Test external links
+	xx Generic wait for email
+- Add global variable to control closing browser at end of profile creation
+- Change all profile related scripts to use CONTINUE_ON_FAILURE as appropriate
+	- Education Candidate
+	- Education Partner
+	- Journey Candidate
+	xx Journey Partner
+- Change Create Education Partner script to use the image matching function
+- Add email if test suite collection has failures
+- Add other tests to test suite collection
+	- Test menu links
+	

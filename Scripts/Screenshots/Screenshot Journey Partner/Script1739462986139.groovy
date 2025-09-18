@@ -43,6 +43,8 @@ WebUI.click(findTestObject('Screenshots/Journey Sender/button_Log In'))
 
 WebUI.click(findTestObject('Object Repository/Screenshots/Journey Sender/a_My Profile'))
 
+WebUI.waitForPageLoad(10)
+
 tabs = ['Contact Information', 'Organization Info', 'Service Options', 'Readiness', 'Ministry Prefs', 'IT Positions', 'Match Filters',
 	 'Recruiting Countries']
 

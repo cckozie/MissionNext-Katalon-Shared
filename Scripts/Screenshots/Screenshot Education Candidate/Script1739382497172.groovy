@@ -34,6 +34,8 @@ WebUI.navigateToUrl('https://education.missionnext.org/signup/candidate')
 
 WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : page], FailureHandling.STOP_ON_FAILURE)
 	
+//WebUI.callTestCase(findTestCase('_functions/Get Select Elements'), [('varBaseName') : baseName, ('varPage') : page], FailureHandling.STOP_ON_FAILURE)
+
 WebUI.navigateToUrl('https://education.missionnext.org/education-home/login-here/')
 
 WebUI.setText(findTestObject('Screenshots/Education Goer/input_Username'), 'cktest14ec')
@@ -42,8 +44,11 @@ WebUI.setEncryptedText(findTestObject('Screenshots/Education Goer/input_Password
 
 WebUI.click(findTestObject('Screenshots/Education Goer/button_Log In'))
 
+WebUI.waitForPageLoad(10)
+
 tabs = ['Contact Info', 'Experience', 'Education', 'Situation', 'Availability', 'Preferences', 'OptionsComment', 'Spouse Info'
     , 'Spouse Experience', 'Spouse Service Prefs', 'Spouse Education', 'Spouse Teaching Prefs']
+//tabs = ['Availability']
 
 WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : 'Dashboard'], FailureHandling.STOP_ON_FAILURE)
 
@@ -82,6 +87,8 @@ for (def tab : tabs) {
     
 	WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : tab], FailureHandling.STOP_ON_FAILURE)
 	
+	WebUI.callTestCase(findTestCase('_functions/Get Select Elements'), [('varBaseName') : baseName, ('varPage') : tab], FailureHandling.STOP_ON_FAILURE)
+
 	WebUI.scrollToPosition(0, 0)
 	
 	WebUI.delay(1)

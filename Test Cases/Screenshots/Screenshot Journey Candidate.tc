@@ -19,14 +19,14 @@
       <variableId>286e12de-9b7e-428f-8932-7e6c6d7b7449</variableId>
    </variableLinks>
    <variable>
-      <defaultValue>'journeygoer'</defaultValue>
+      <defaultValue>'cktest15jc'</defaultValue>
       <description></description>
       <id>09ba0cf9-35c9-4d3e-b540-d2b8ed100d1d</id>
       <masked>false</masked>
       <name>username</name>
    </variable>
    <variable>
-      <defaultValue>'/nK6CFRRtKWw0ZraeJTNLl4bTNnkuDBl'</defaultValue>
+      <defaultValue>'gnYzEwUXvDouXAVi5eVeOg=='</defaultValue>
       <description></description>
       <id>286e12de-9b7e-428f-8932-7e6c6d7b7449</id>
       <masked>false</masked>

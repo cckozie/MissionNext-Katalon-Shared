@@ -42,13 +42,17 @@ WebUI.setEncryptedText(findTestObject('Screenshots/Education Goer/input_Password
 
 WebUI.click(findTestObject('Screenshots/Education Goer/button_Log In'))
 
+WebUI.waitForPageLoad(10)
+
 WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : 'Dashboard'], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('_functions/Get Select Elements'), [('varBaseName') : baseName, ('varPage') : page], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.click(findTestObject('Object Repository/Screenshots/Education Sender/a_My Profile'))
 
 tabs = ['Contact Info', 'School Info', 'Positions Needed', 'Service Options', 'Readiness', 'Match Filters', 
 	'Recruiting Countries', 'Admin Info']
-
+tabs = ['Admin Info']
 for (def tab : tabs) {
 
 	WebUI.click(findTestObject('Screenshots/Education Sender/a_' + tab))
@@ -65,9 +69,11 @@ for (def tab : tabs) {
 		
 	WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : tab], FailureHandling.STOP_ON_FAILURE)
 	
+	WebUI.callTestCase(findTestCase('_functions/Get Select Elements'), [('varBaseName') : baseName, ('varPage') : tab], FailureHandling.STOP_ON_FAILURE)
+
 	WebUI.scrollToPosition(0, 0)
 	
 	WebUI.delay(1)
 }
 
-WebUI.closeBrowser()
+//WebUI.closeBrowser()

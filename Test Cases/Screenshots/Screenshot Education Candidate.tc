@@ -19,14 +19,14 @@
       <variableId>08bc0d4c-1019-469c-a467-118bad8042cf</variableId>
    </variableLinks>
    <variable>
-      <defaultValue>'educationgoer'</defaultValue>
+      <defaultValue>'cktest14ec'</defaultValue>
       <description></description>
       <id>0587f44a-426c-4606-b81b-8f376f92e3bd</id>
       <masked>false</masked>
       <name>username</name>
    </variable>
    <variable>
-      <defaultValue>'gHe6FL13cR4M63sn3ZdrY4/KGeFIevaF0VJKdXFkcuo='</defaultValue>
+      <defaultValue>'rvR032z4JCjllCvYTU6dhw=='</defaultValue>
       <description></description>
       <id>08bc0d4c-1019-469c-a467-118bad8042cf</id>
       <masked>false</masked>

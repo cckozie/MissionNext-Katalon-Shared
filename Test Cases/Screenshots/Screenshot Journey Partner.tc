@@ -19,14 +19,14 @@
       <variableId>025be486-5b6e-445c-8409-7f34961ae2b5</variableId>
    </variableLinks>
    <variable>
-      <defaultValue>'journeysender'</defaultValue>
+      <defaultValue>'cktest17jp'</defaultValue>
       <description></description>
       <id>20fc5f53-11a0-4380-83d4-375d48a45d3a</id>
       <masked>false</masked>
       <name>username</name>
    </variable>
    <variable>
-      <defaultValue>'itMzMsgfgQES6zgv0qx7M+dDgGsBTCK3lpXlFXnGUZs='</defaultValue>
+      <defaultValue>'8DY9ST8qsuU3b2Raq+e+VQ=='</defaultValue>
       <description></description>
       <id>025be486-5b6e-445c-8409-7f34961ae2b5</id>
       <masked>false</masked>
