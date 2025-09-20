@@ -34,7 +34,7 @@ WebUI.navigateToUrl('https://education.missionnext.org/signup/candidate')
 
 WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : page], FailureHandling.STOP_ON_FAILURE)
 	
-//WebUI.callTestCase(findTestCase('_functions/Get Select Elements'), [('varBaseName') : baseName, ('varPage') : page], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('_functions/Get Select Elements'), [('varBaseName') : baseName, ('varPage') : page], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.navigateToUrl('https://education.missionnext.org/education-home/login-here/')
 

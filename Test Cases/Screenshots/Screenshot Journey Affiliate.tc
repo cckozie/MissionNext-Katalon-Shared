@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Screenshot Journey Affiliate</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>fa9905a5-f6f8-412a-9474-0e1b54ce38e9</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>cd451765-7a62-427d-90e5-40d0e7c84e73</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>355ad039-8477-4099-986b-8d333d0d150c</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'cktest17jp'</defaultValue>
+      <description></description>
+      <id>cd451765-7a62-427d-90e5-40d0e7c84e73</id>
+      <masked>false</masked>
+      <name>username</name>
+   </variable>
+   <variable>
+      <defaultValue>'8DY9ST8qsuU3b2Raq+e+VQ=='</defaultValue>
+      <description></description>
+      <id>355ad039-8477-4099-986b-8d333d0d150c</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
+</TestCaseEntity>

@@ -19,6 +19,8 @@ import org.openqa.selenium.Keys as Keys
 import com.kms.katalon.core.configuration.RunConfiguration
 import java.io.File
 
+ignoreList = ['Populate from']  //Ignore the Populate from (existing job) select list
+
 page = 'Register'
 
 filePath = WebUI.callTestCase(findTestCase('_functions/Get Output Directory'), [:], FailureHandling.STOP_ON_FAILURE)
@@ -29,11 +31,13 @@ WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-WebUI.navigateToUrl('https://journey.explorenext.org/signup/organization')
+WebUI.navigateToUrl('https://journey.missionnext.org/signup/organization')
 
 WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : page], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.navigateToUrl('https://journey.explorenext.org/journey-home/login-here/')
+WebUI.callTestCase(findTestCase('_functions/Get Select Elements'), [('varBaseName') : baseName, ('varPage') : page], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.navigateToUrl('https://journey.missionnext.org/journey-home/login-here/')
 
 WebUI.setText(findTestObject('Screenshots/Journey Sender/input_Username'), 'cktest17jp')
 
@@ -74,10 +78,71 @@ for (def tab : tabs) {
 	
 	WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : tab], FailureHandling.STOP_ON_FAILURE)
 	
+	WebUI.callTestCase(findTestCase('_functions/Get Select Elements'), [('varBaseName') : baseName, ('varPage') : tab], FailureHandling.STOP_ON_FAILURE)
+
 	WebUI.scrollToPosition(0, 0)
 	
 	WebUI.delay(1)
 	
 }
 
-WebUI.closeBrowser()
+WebUI.click(findTestObject('Object Repository/Screenshots/Journey Sender/a_Job Matches'))
+
+WebUI.switchToWindowTitle('MissionNext: Jobs Section')
+
+WebUI.click(findTestObject('Object Repository/Screenshots/Journey Sender/Jobs/button_Add Job'))
+
+WebUI.switchToWindowIndex(2)
+
+WebUI.click(findTestObject('Object Repository/Screenshots/Journey Sender/Jobs/checkbox_Need to See Specific IT Jobs'))
+
+baseName = baseName + 'Job_'
+
+tabs = ['Job Category', 'IT Job Category', 'Programming Languages', 'Job Classification', 'Assignment Detail', 'Job Description', 'Logistics',
+	 'Contact Details', 'Other Criteria']
+
+categories = ['BUSINESS AS MISSION', 'CHURCH DEVELOPMENT', 'COMMUNICATIONS', 'COMMUNITY DEVELOPMENT', 'CONSTRUCT/MAINTAIN', 'DISCIPLESHIP', 
+	'DISCIPLE YOUTH', 'EDUCATION', 'ESL/TESOL', 'ENGINEERING', 'EVANGELISM', 'EVANGELISM SUPPORT', 'HEALTH CARE', 'INFORMATION TECHNOLOGY', 
+	'JUSTICE/ADVOCACY', 'RELIEF AND DEVELOPMENT', 'RESOURCE MANAGEMENT', 'SUPPORT HELPS', 'SUPPORT PROFESSIONAL']
+
+itCategories = ['TECHNICAL', 'IT ENGINEERING/ANALYST', 'ADMINISTRATOR',	'IT COMMUNICATIONS', 'CONTENT',	'DESIGNERS', 'DATABASE', 'MANAGEMENT',
+	'SOCIAL MEDIA/MARKETING', 'WEB']
+
+for (def tab : tabs) {
+	
+	WebUI.click(findTestObject('Screenshots/Journey Sender/Jobs/a_' + tab))
+		
+	WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : tab], FailureHandling.STOP_ON_FAILURE)
+	
+	WebUI.callTestCase(findTestCase('_functions/Get Select Elements'), [('varBaseName') : baseName, ('varPage') : tab, ('varIgnoreList') : ignoreList], FailureHandling.STOP_ON_FAILURE)
+
+	if(tab == 'Job Category') {
+		
+		for(category in categories) {
+			
+			WebUI.selectOptionByValue(findTestObject('Object Repository/Screenshots/Journey Sender/Jobs/select_Journey Job Category'), category, false)
+			
+			category = category.replace('/', '\\')
+			
+			WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : tab + '_' + category], FailureHandling.STOP_ON_FAILURE)
+		}
+	
+	}
+
+	if(tab == 'IT Job Category') {
+		
+		for(itCategory in itCategories) {
+			
+			WebUI.selectOptionByValue(findTestObject('Object Repository/Screenshots/Journey Sender/Jobs/select_IT Job Category'), itCategory, false)
+			
+			itCategory = itCategory.replace('/', '\\')
+			
+			WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : tab + '_' + itCategory], FailureHandling.STOP_ON_FAILURE)
+		}
+		
+	}
+	
+	WebUI.scrollToPosition(0, 0)
+}
+
+//WebUI.closeBrowser()

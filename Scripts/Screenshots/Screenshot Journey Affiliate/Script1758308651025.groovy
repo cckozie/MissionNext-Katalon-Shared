@@ -23,13 +23,13 @@ page = 'Register'
 
 filePath = WebUI.callTestCase(findTestCase('_functions/Get Output Directory'), [:], FailureHandling.STOP_ON_FAILURE)
 
-baseName = filePath + 'Journey Guide_'
+baseName = filePath + 'Journey Affiliate_'
 
 WebUI.openBrowser('')
 
 WebUI.maximizeWindow()
 
-WebUI.navigateToUrl('https://jg.missionnext.org/signup/organization')
+WebUI.navigateToUrl('https://journey.missionnext.org/signup/agency')
 
 WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : page], FailureHandling.STOP_ON_FAILURE)
 
@@ -37,43 +37,22 @@ WebUI.callTestCase(findTestCase('_functions/Get Select Elements'), [('varBaseNam
 
 WebUI.navigateToUrl('https://journey.missionnext.org/journey-home/login-here/')
 
-WebUI.setText(findTestObject('Screenshots/Journey Sender/input_Username'), 'cktest02jp')
+WebUI.setText(findTestObject('Screenshots/Journey Sender/input_Username'), 'cktest03ja')
 
-WebUI.setEncryptedText(findTestObject('Screenshots/Journey Sender/input_Password'), 'J+U8o5fvtGfb5LDZyGLqyg==')
+WebUI.setEncryptedText(findTestObject('Screenshots/Journey Sender/input_Password'), 'gcXGyZ7tChbih9PubKIekw==')
 
 WebUI.click(findTestObject('Screenshots/Journey Sender/button_Log In'))
 
-WebUI.click(findTestObject('Object Repository/Screenshots/Journey Sender/a_My Profile'))
+WebUI.click(findTestObject('Object Repository/Screenshots/Journey Affiliate/a_My Profile'))
 
 WebUI.waitForPageLoad(10)
 
-tabs = ['Contact Information', 'Organization Info', 'Service Options', 'Readiness', 'Ministry Prefs', 'IT Positions', 'Match Filters',
-	 'Recruiting Countries']
+tabs = ['Contact Information', 'Agency', 'Settings']
 
 for (def tab : tabs) {
 
-	WebUI.click(findTestObject('Screenshots/Journey Sender/a_' + tab))
-	
-	if(tab == 'Organization Info') {
+	WebUI.click(findTestObject('Screenshots/Journey Affiliate/a_' + tab))
 		
-				WebUI.scrollToElement(findTestObject('Object Repository/Screenshots/Journey Sender/input_Hide Listing'),2)
-				WebUI.delay(1)
-				WebUI.click(findTestObject('Object Repository/Screenshots/Journey Sender/input_Hide Listing'))
-				
-				
-	} else	if(tab == 'Service Options') {
-		
-				WebUI.scrollToElement(findTestObject('Object Repository/Screenshots/Journey Sender/input_Awareness Trip'),2)
-				WebUI.delay(1)
-				WebUI.click(findTestObject('Object Repository/Screenshots/Journey Sender/input_Awareness Trip'))
-				
-				WebUI.click(findTestObject('Object Repository/Screenshots/Journey Sender/input_Vision Trip'))
-				
-				WebUI.scrollToElement(findTestObject('Object Repository/Screenshots/Journey Sender/input_Need Candidates for Short-Term Assignments'),2)
-				WebUI.delay(1)
-				WebUI.click(findTestObject('Object Repository/Screenshots/Journey Sender/input_Need Candidates for Short-Term Assignments'))
-	}
-	
 	WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : tab], FailureHandling.STOP_ON_FAILURE)
 	
 	WebUI.callTestCase(findTestCase('_functions/Get Select Elements'), [('varBaseName') : baseName, ('varPage') : tab], FailureHandling.STOP_ON_FAILURE)

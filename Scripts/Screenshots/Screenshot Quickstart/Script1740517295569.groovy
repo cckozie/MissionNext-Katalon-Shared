@@ -81,6 +81,8 @@ for (def link : links) {
     WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : link], 
         FailureHandling.STOP_ON_FAILURE)
 	
+	WebUI.callTestCase(findTestCase('_functions/Get Select Elements'), [('varBaseName') : baseName, ('varPage') : link], FailureHandling.STOP_ON_FAILURE)
+
 	WebUI.closeWindowIndex(1)
 
 }

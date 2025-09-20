@@ -26,6 +26,8 @@ fileBase = varBaseName
 
 page = varPage
 
+ignoreList = varIgnoreList
+
 selectLists = [:]
 
 WebDriver driver = DriverFactory.getWebDriver()
@@ -59,47 +61,56 @@ if(displayedLists.size() > 0) {
 			
 			label = preceding.getText().replace('*', '')
 			
-			Select select = new Select(it);
+			if(!ignoreList.contains(label)) {
 			
-			List<WebElement> optionList = select.getOptions();
-			
-			optionList.each {
+				Select select = new Select(it);
 				
-				options.add(it.getText())
+				List<WebElement> optionList = select.getOptions();
+				
+				optionList.each {
+					
+					options.add(it.getText())
+				}
+				
+				selectLists.put(label,options)
+				println(options)
+				
+			} else {
+				println('Ignoring list for ' + label)
 			}
-			
-			selectLists.put(label,options)
-			println(options)
 		}
 		
-		file = (fileBase + page + '_Select Lists.csv')
+		if(selectLists.size() > 0) {
 		
-		outFile = new File(file)
-		
-		outText = 'FIELD LABEL' + ',' + 'OPTIONS' + '\n\n'
-		
-		outFile.write(outText)
-		
-		for(list in selectLists) {
+			file = (fileBase + page + '_Select Lists.csv')
 			
-			optionsString = ''
+			outFile = new File(file)
 			
-			label = '"' + list.key + '"'
+			outText = 'FIELD LABEL' + ',' + 'OPTIONS' + '\n\n'
 			
-			options = list.value
+			outFile.write(outText)
 			
-			options.each {
-				if(it.contains(',')) {
-					it = '"'  + it + '"'
+			for(list in selectLists) {
+				
+				optionsString = ''
+				
+				label = '"' + list.key + '"'
+				
+				options = list.value
+				
+				options.each {
+					if(it.contains(',')) {
+						it = '"'  + it + '"'
+					}
+					optionsString = optionsString + it + ','
 				}
-				optionsString = optionsString + it + ','
+				
+				outText = label + ',' + optionsString.substring(0, optionsString.length() - 1)
+				
+				println(outText) 
+				
+				outFile.append(outText + '\n')
 			}
-			
-			outText = label + ',' + optionsString.substring(0, optionsString.length() - 1)
-			
-			println(outText) 
-			
-			outFile.append(outText + '\n')
 		}
 	}
 }

@@ -33,6 +33,8 @@ WebUI.navigateToUrl('https://journey.missionnext.org/signup/candidate')
 
 WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : page], FailureHandling.STOP_ON_FAILURE)
 
+WebUI.callTestCase(findTestCase('_functions/Get Select Elements'), [('varBaseName') : baseName, ('varPage') : page], FailureHandling.STOP_ON_FAILURE)
+
 WebUI.navigateToUrl('https://journey.missionnext.org/login-here/')
 
 WebUI.setText(findTestObject('Screenshots/Journey Goer/input_Username'), 'cktest15jc')
@@ -93,6 +95,8 @@ for (def tab : tabs) {
     
 	WebUI.callTestCase(findTestCase('_functions/Get Screenshot and Tooltip Text'), [('varFileBase') : baseName, ('varPage') : tab], FailureHandling.STOP_ON_FAILURE)
 	
+	WebUI.callTestCase(findTestCase('_functions/Get Select Elements'), [('varBaseName') : baseName, ('varPage') : tab], FailureHandling.STOP_ON_FAILURE)
+
 	WebUI.scrollToPosition(0, 0)
 	
 	WebUI.delay(1)
