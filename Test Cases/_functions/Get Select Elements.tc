@@ -6,4 +6,17 @@
    <comment></comment>
    <recordOption>OTHER</recordOption>
    <testCaseGuid>db4e7663-28a8-4332-b2f1-a67bf1bf0710</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>e9394a0b-c391-42b1-ade5-4da562e0d197</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>[]</defaultValue>
+      <description></description>
+      <id>e9394a0b-c391-42b1-ade5-4da562e0d197</id>
+      <masked>false</masked>
+      <name>varIgnoreList</name>
+   </variable>
 </TestCaseEntity>
